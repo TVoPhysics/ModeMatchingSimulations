@@ -1,0 +1,481 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass iopart
+\begin_preamble
+\usepackage{color}
+
+
+\title{Mode-Matching Considerations in the Interferometer}
+\author{TVo}
+%\institution{}
+
+\ligodccnumber{T}{XX}{XXXXX}{}{}
+\ligodistribution{SUGWG}
+%\ligodraft
+\ligorestricted{LSC members}
+\ligointernal
+\ligosites
+%\cvsid{$Id: S3-matlab-code.tex,v 1.13 2005/03/05 12:57:22 joe Exp $}
+\numberwithin{equation}{section}
+\newcommand{\IJMP}{{\it Int. J. Mod. Phys.}}
+\newcommand{\PRpt}{{\it Phys. Rep.}}
+\newcommand{\AandA}{{\it Astron. Astrophys.}}
+\newcommand{\PR}{{\it Phys. Rev.} }
+\newcommand{\omg}[0]{{{\Omega}}}
+\newcommand{\dxvec}[0]{{\Delta \!\! \stackrel{\rightharpoonup}{x}}}
+\newcommand{\xvec}[1]{{\stackrel{\rightharpoonup}{x}}_{#1}}
+\newcommand{\del}[0]{{}_{{}^\triangle}\!}
+\newcommand{\w}[0]{{\rm w}}
+\newcommand{\e}[0]{{\rm e}}
+\newcommand{\I}[0]{{\mathcal{I}}}
+
+
+\newcommand{\tcr}{\textcolor{red}}
+\newcommand{\tcb}{\textcolor{blue}}
+\newcommand{\tcm}{\textcolor{magenta}}
+\newcommand{\tcg}{\textcolor{green}}
+\newcommand{\tcp}{\textcolor{purple}}
+
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Abstract
+We are looking to explore the effects of Mode-mismatching in the interferometer using Finesse tools. This will tell us the overall effect of each mode-matching system in various parts in the overall scheme of Advanced LIGO and beyond. 
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Using the Quantum-limited sensitivity as the metric for whether or not something is well mode-matched, we look to vary the optical parameters to induce a less than perfect noise curve to see how LIGO's sensitivity will be affected by mode-mismatch. The two ways of implmenting a mode-mismatch will be to either change the radii of curvature (RoCs) of the optics that make up the resonant cavities as well as the auxillary optics in between the cavities. By changing the RoCs we are effectively adding a thermal lens to the optical system and seeing the effects of mode-mismatch on the sensitivity
+\end_layout
+
+\begin_layout Standard
+An interesting question arises about the effects of the mismatch on squeezed light that is filtered using a high finesse filter cavity. In all of the curves below, we modeled an interferometer that utilizes 10 db of squeezing and a filter cavity based off of (insert link here, Matt's realistic filter cavity), which is a 16 meter linear fabry-perot cavity.
+\end_layout
+
+\begin_layout Section
+Varying the SRC Losses
+\end_layout
+
+\begin_layout Standard
+The graph below shows the sensitivity of the interferometer with varying losses in the signal recycling cavity by changing the radius of curvature of the SRM. Physically, this would correspond to adding a heating element around the barrell of the optic. The percentage in mode-mismatch is calculated using the overlap integral between the nominal q-parameter and the q-paramter that is detected when applying the new curvatures. You can see that even applying a 4 percent mode-mismatch, you lose almost all the beneficial effects of squeezing. 
+\begin_inset Float figure
+placement htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename VarySRC.png
+	width 11cm
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Varying SRC
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "default"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Varying the FC Losses
+\end_layout
+
+\begin_layout Standard
+The filter cavity is designed to attenuate the rise in low frequency noise when applying a squeezer. The losses that are suffered by an imperfect end mirror in the cavity is shown below. What we see is a loss in effeciveness of the cavities filtering capabilities and the interferometer output looks like a purely shot-noise squeezed sensitivity curve. The FC is a high finesse cavity, which means it depends highly on the end mirror being a near perfect.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float figure
+placement htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename VaryEMFC.png
+	width 11cm
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Varying EMFC Transmission
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "default"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float figure
+placement htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename VaryIMFC.png
+	width 11cm
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Varying IMFC
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "default"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In figure 4, we vary the radius of curvature of the filter cavity input coupler and see the benefits disappear and the cavity pole rise in frequency and amplitude. 
+\begin_inset Float figure
+placement htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename VaryFC_RoC.png
+	width 11cm
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Varying IMFC Roc
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "default"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Varying the Sqz/FC to the IFO
+\end_layout
+
+\begin_layout Standard
+In between the squeezer/filter cavity setup are two lenses which act as a telescope to get the beam shape correct before entering the OFI and mixing with the interferometer.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float figure
+placement htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename VarySqzTele.png
+	width 11cm
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Varying IMFC
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "default"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Varying the input to the OMC
+\end_layout
+
+\begin_layout Standard
+The mode-matching devices prior to entering the OMC will be needed for correction.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float figure
+placement htbp
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename VaryOM1_RoC.png
+	width 11cm
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Varying IMFC
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "default"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

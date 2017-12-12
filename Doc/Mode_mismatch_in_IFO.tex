@@ -1,0 +1,119 @@
+\documentclass[12pt]{iopart}
+\usepackage{hyperref}
+\usepackage{color}
+
+%\cvsid{$Id: S3-matlab-code.tex,v 1.13 2005/03/05 12:57:22 joe Exp $}
+\newcommand{\IJMP}{{\it Int. J. Mod. Phys.}}
+\newcommand{\PRpt}{{\it Phys. Rep.}}
+\newcommand{\AandA}{{\it Astron. Astrophys.}}
+\newcommand{\omg}[0]{{{\Omega}}}
+\newcommand{\dxvec}[0]{{\Delta \!\! \stackrel{\rightharpoonup}{x}}}
+\newcommand{\xvec}[1]{{\stackrel{\rightharpoonup}{x}}_{#1}}
+\newcommand{\del}[0]{{}_{{}^\triangle}\!}
+\newcommand{\w}[0]{{\rm w}}
+
+
+\newcommand{\tcr}{\textcolor{red}}
+\newcommand{\tcb}{\textcolor{blue}}
+\newcommand{\tcm}{\textcolor{magenta}}
+\newcommand{\tcg}{\textcolor{green}}
+\newcommand{\tcp}{\textcolor{purple}}
+
+
+\newcommand{\gguide}{{\it Preparing graphics for IOP Publishing journals}}
+%Uncomment next line if AMS fonts required
+%\usepackage{iopams}  
+
+
+\begin{document}
+
+\title[]{Modeling Mode Mismatches in Advanced LIGO}
+
+\author{Thomas Vo and Stefan Ballmer}
+
+\address{Syracuse University, Department of Physics, Syracuse University 13244}
+\ead{thvo@syr.edu and sballmer@syr.edu}
+\vspace{10pt}
+\begin{indented}
+\item[]October 2016
+\end{indented}
+
+
+
+\begin{abstract}
+We are looking to explore the effects of mode mismatch on the quantum noise in an Advanced LIGO optical setup using optical simulation tools.  This will tell us the overall effect of each mode-matching system in various parts in the overall scheme of Advanced LIGO and beyond.
+\end{abstract}
+
+\section{Introduction}
+With the direct detection of gravitational waves radiated from a binary black hole coalescence[ref1-ref3], the Laser Interferometer Gravitational-Wave Observatory (LIGO) detectors have ushered in the newest era of astronomy. 
+
+LIGO's sensitivity is bounded by a number of different noise sources such as quantum, seismic and thermal coating noise.  This paper will focus primarily on the noise due to quantum limitations, namely, radiation pressure and shot noise.  The primary way that LIGO plans on mitigating these fundamental noise sources is through the use of squeezed states of light, which have been proven to lower shot noise in the enhanced LIGO scheme[Sheila's Thesis?].  
+
+The advanced LIGO (aLIGO) optical setup includes seven coupled Fabry-Perot cavities which are resonant through the familiar Pound-Drever-Hall techniques [Eric Black PDH].  
+
+When introducing an interferometer with squeezed states in combination with a detuned optical cavity, known as a "filter cavity", the response of the cavity in reflection can be used to vary the squeezed states as a function of frequency. 
+
+Introducing this optical setup requires at least two additional optical cavities and the ability to couple in losses is increased as well.
+
+One particular challenge that arises from using squeezed states in an interferometer is limiting the amount of mode mismatches between optical cavities as this degrades the positive effect of squeezing [Sheon Chua's thesis].  The effect of creating an optical loss either from mode-mismatching or scattering can be modeled as a partially reflective beamsplitter coupling unsqueezed vacuum fluctuations into the squeezed fields and thereby changing the variance of the outgoing field. Fig[?]
+
+Although it is simple to qualitatively derive the degradation of a squeezed field due to optical losses for a single optic, the picture becomes increasingly difficult when dealing with the combination of higher order modes, dozens of optics and several coupled cavities.  Therefore we are forced to use numerical simulations to understand how the sensitivity of the interferometer is affected by mode mismatch. Our choice of software is FINESSE [ref authors] because of its ability to account for squeezed states as well as higher order mode couplings.  
+
+At first glance it is difficult to point at one exact place where mode-mismatches will hurt LIGO's sensitvity the most which is why it is important to carefully consider how small changes in the optics will affect the astrophysical range.  
+
+The graph below shows the sensitivity of the interferometer with varying losses in the signal recycling cavity by changing the radius of curvature of the SRM.  Physically, this would correspond to adding a heating element around the barrell of the optic.  The percentage in mode-mismatch is calculated using the overlap integral between the nominal q-parameter and the q-paramter that is detected when applying the new curvatures.  You can see that even applying a 4 percent mode-mismatch, you lose almost all the beneficial effects of squeezing.
+
+\section{Theoretical Section}
+
+A convenient way to characterize an optical cavity is to calculate the cavity's eigenmode which is a complex number q(R,W).  Here we can draw out the IFO w/ all the cavities and define their q-parameters.
+
+Also need to define the overlap integral between two Gaussian beams.
+
+HOM content for a particular mismatch and coupling coefficient between the 00 mode.
+
+\section{Effects of Cavity Mismatches}
+In figure[?] we show the advanced LIGO optical layout with various resonant modes associated with them, 
+
+A figure showing the contour plots of a mode overlap, similar to Aiden's phase space maps?
+
+\subsection{Mismatching the OMC}
+The output mode cleaner is designed to filter the higher order mode content before reading out the gravitational wave signal h(t).  We vary the mode of the incoming beam to mismatch the OMC to the rest of the IFO.
+
+\subsection{Mismatching the SQZ}
+Finesse's module for injecting squeezed states is described by ref[]. In reality, the squeezer utilizes a second harmonic generator to create pairs of correlated photons and has its own resonant cavity.  However, Finesse's injection of squeezed states is an injection of noise sidebands into the interferometer from the output port.
+
+Mismatching the squeezing field to the rest of the interferometer creates resonances at higher frequencies due to the cavity mismatches 
+
+\subsection{Mismatching the FC}
+The filter cavity is designed to attenuate the rise in low frequency noise when applying a squeezer [ref Matt Evans and Tomoki Isogai].  The losses that are suffered by an imperfect end mirror in the cavity is shown below.  What we see is a loss in effectiveness of the cavities filtering capabilities and the interferometer output looks like a purely shot-noise squeezed sensitivity curve. The FC is a high finesse cavity, which means it depends highly on the end mirror being a near perfect.
+
+\subsection{Mismatching the SRC}
+Changing the signal recycling cavity has the largest effect on the sensitivity of the interferometer, which means we should put actuators on it as well as not use it for mode-matching the OMC
+
+The graph below shows the sensitivity of the interferometer with varying losses in the signal recycling cavity by changing the radius of curvature of the SRM.  Physically, this would correspond to adding a heating element around the barrel of the optic.  The percentage in mode-mismatch is calculated using the overlap integral between the nominal q-parameter and the q-paramter that is detected when applying the new curvatures.  You can see that even applying a 4 percent mode-mismatch, you lose almost all the beneficial effects of squeezing.
+
+In figure [], we vary the radius of curvature of the filter cavity input coupler and see the benefits disappear and the cavity pole rise in frequency and amplitude.
+
+In between the squeezer/filter cavity setup are two lenses which act as a telescope to get the beam shape correct before entering the OFI and mixing with the interferometer, this isolates the effect between the cavity modal change.
+
+\section{Optical Spring from Mismatching the SRC}
+A possible added section which can be interesting, maybe as an appendix?
+
+\section{Future Upgrades}
+
+The squeezing install is planned for the commissioning break between O2 and O3, so the need for active mode-matching is coming up.
+
+From our investigations, we have found that the priority for upgrades to the interferometer starts with the signal recycling cavity.
+
+There are a few ways to correct the mode matching, thermal lens and displacement telescope at the output chain.
+
+
+\section{Conclusion}
+
+The mode-matching devices prior to entering the OMC will be needed for correction.
+
+Changing the eigenmode of the signal recycling cavity will also affect the mode-matching into the OMC, this will lead to an increased amount of losses. 
+
+\end{document}
+
+

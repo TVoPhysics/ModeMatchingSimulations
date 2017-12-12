@@ -1,0 +1,103 @@
+Abstract
+
+We are looking to explore the effects of Mode-mismatching in the 
+interferometer using Finesse tools. This will tell us the overall 
+effect of each mode-matching system in various parts in the 
+overall scheme of Advanced LIGO and beyond. 
+
+1 Introduction
+
+Using the Quantum-limited sensitivity as the metric for whether 
+or not something is well mode-matched, we look to vary the 
+optical parameters to induce a less than perfect noise curve to 
+see how LIGO's sensitivity will be affected by mode-mismatch. The 
+two ways of implmenting a mode-mismatch will be to either change 
+the radii of curvature (RoCs) of the optics that make up the 
+resonant cavities as well as the auxillary optics in between the 
+cavities. By changing the RoCs we are effectively adding a 
+thermal lens to the optical system and seeing the effects of 
+mode-mismatch on the sensitivity
+
+An interesting question arises about the effects of the mismatch 
+on squeezed light that is filtered using a high finesse filter 
+cavity. In all of the curves below, we modeled an interferometer 
+that utilizes 10 db of squeezing and a filter cavity based off of 
+(insert link here, Matt's realistic filter cavity), which is a 16 
+meter linear fabry-perot cavity.
+
+2 Varying the SRC Losses
+
+The graph below shows the sensitivity of the interferometer with 
+varying losses in the signal recycling cavity by changing the 
+radius of curvature of the SRM. Physically, this would correspond 
+to adding a heating element around the barrell of the optic. The 
+percentage in mode-mismatch is calculated using the overlap 
+integral between the nominal q-parameter and the q-paramter that 
+is detected when applying the new curvatures. You can see that 
+even applying a 4 percent mode-mismatch, you lose almost all the 
+beneficial effects of squeezing. [float Figure:
+ <Graphics file: /home/thomasvo/Documents/MM_WriteUp/FinesseModeling/VarySRC.png>
+ [Figure 1:
+Varying SRC
+]<default> 
+]
+
+3 Varying the FC Losses
+
+The filter cavity is designed to attenuate the rise in low 
+frequency noise when applying a squeezer. The losses that are 
+suffered by an imperfect end mirror in the cavity is shown below. 
+What we see is a loss in effeciveness of the cavities filtering 
+capabilities and the interferometer output looks like a purely 
+shot-noise squeezed sensitivity curve. The FC is a high finesse 
+cavity, which means it depends highly on the end mirror being a 
+near perfect.
+
+[float Figure:
+ <Graphics file: /home/thomasvo/Documents/MM_WriteUp/FinesseModeling/VaryEMFC.png>
+ [Figure 2:
+Varying EMFC Transmission
+]<default> 
+]
+
+[float Figure:
+ <Graphics file: /home/thomasvo/Documents/MM_WriteUp/FinesseModeling/VaryIMFC.png>
+ [Figure 3:
+Varying IMFC
+]<default> 
+]
+
+In figure 4, we vary the radius of curvature of the filter cavity 
+input coupler and see the benefits disappear and the cavity pole 
+rise in frequency and amplitude. [float Figure:
+ <Graphics file: /home/thomasvo/Documents/MM_WriteUp/FinesseModeling/VaryFC_RoC.png>
+ [Figure 4:
+Varying IMFC Roc
+]<default> 
+]
+
+4 Varying the Sqz/FC to the IFO
+
+In between the squeezer/filter cavity setup are two lenses which 
+act as a telescope to get the beam shape correct before entering 
+the OFI and mixing with the interferometer.
+
+[float Figure:
+ <Graphics file: /home/thomasvo/Documents/MM_WriteUp/FinesseModeling/VarySqzTele.png>
+ [Figure 5:
+Varying IMFC
+]<default> 
+]
+
+5 Varying the input to the OMC
+
+The mode-matching devices prior to entering the OMC will be 
+needed for correction.
+
+[float Figure:
+ <Graphics file: /home/thomasvo/Documents/MM_WriteUp/FinesseModeling/VaryOM1_RoC.png>
+ [Figure 6:
+Varying IMFC
+]<default> 
+]
+
