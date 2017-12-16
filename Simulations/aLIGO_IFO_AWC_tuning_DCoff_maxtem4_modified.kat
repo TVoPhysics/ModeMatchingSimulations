@@ -383,8 +383,14 @@ bs1 IMFC 61u 0 0 0 nIMFC1 nIMFC2 nIMFC3 nIMFC4
 s lFC1 $FCLength nIMFC3 nEMFC1
 s lFC2 $FCLength nEMFC2 nIMFC4
 bs1 EMFC 0 0 -0.000882 0 nEMFC1 nEMFC2 dump dump
- 
-s lsqz_FC 0 nsqz nIMFC1
+
+# insert a MMT between the squeezer and the FC so you can separate the modes
+s ssqz_lens1 0.1	nsqz nsqz_lens1a		
+lens sqz_lens1 inf	nsqz_lens1a nsqz_lens1b
+s ssqz_lens1_lens2 0.1	nsqz_lens1b nsqz_lens2a
+lens sqz_lens2 inf	nsqz_lens2a nsqz_lens2b
+s slens2_FC 0.1		nsqz_lens2b nIMFC1
+
 
 # finally the squeezer...
 
