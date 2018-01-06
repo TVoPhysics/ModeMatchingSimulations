@@ -332,8 +332,9 @@ s lOP 0.019 $nsilica nOPa nOPb
 # nOPd is the output towards OMC
 # nOPb is the input from SRC
 # nOPc is the input from squeezer
-isol* OP 100000 nOPd nOPb nOPc
+#isol* OP 100000 nOPd nOPb nOPc
 #isol OP 100000 nOPb nOPd
+dbs OPP nOPb nOPc nOPd nOPz
 
 # need a bunch of dummy spaces to keep refractive index the same over isol nodes
 
